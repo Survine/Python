@@ -16,8 +16,8 @@ class User:
         self.phone = phone
 
 class BillingSystem:
-    def generate_invoice(self, user, billing_cost, purchase_date):
-        billing_cost = (self.quantity * self.price)
+    def generate_invoice(self, user, purchase_date, medicine):
+        billing_cost = medicine.price * medicine.quantity
         print("Invoice:")
         print("Purchasing Date:", purchase_date)
         print("Customer Details:")
@@ -26,10 +26,11 @@ class BillingSystem:
         print("Gender:", user.gender)
         print("Phone:", user.phone)
         print("\nMedicines:")
+        print(f"{medicine.name}\nQuantity: {medicine.quantity}\nPrice per unit: ${medicine.price}")
         print(f"Billing Cost: ${billing_cost}")
 
 paracetamol = Medicine("Paracetamol", 255, "2023-01-01", "2025-01-01", "500mg", 5)
-user1 = User("Hriday", 19, "Agartala", "Male", 9496465959)
+user1 = User("Hriday", 19, "Agartala", "Male", 6009416189)
 
 billing_system = BillingSystem()
-billing_system.generate_invoice(user1, 10.0, "2024-04-04")
+billing_system.generate_invoice(user1, "2024-04-04", paracetamol)
