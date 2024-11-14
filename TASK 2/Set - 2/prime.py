@@ -1,5 +1,3 @@
-# Check Prime number
-
 num = int(input("Enter a number :"))
 if num <= 1:
     print(f"{num} is neither prime nor composite.")
