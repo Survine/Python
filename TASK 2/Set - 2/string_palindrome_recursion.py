@@ -1,20 +1,10 @@
-def is_palindrome(i, string):
-    n = len(string)
-    
-    if i >= n // 2:
+def is_palindrome(i, s):
+    if i >= len(s) // 2:
         return True
-    
-    else:
-        string[i] != string[n - 1 - i]
+    if s[i] != s[len(s) - i - 1]:
         return False
-    
-    return is_palindrome(i + 1, string)
+    return is_palindrome(i + 1, s)
 
 
-string = input("Enter a string: ").strip()
-
-if string:
-    result = is_palindrome(0, string)
-    print("The string is a palindrome:", result)
-else:
-    print("Empty string is not considered a palindrome.")
+s = "madam"
+print(is_palindrome(0, s))  
