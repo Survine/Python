@@ -6,6 +6,7 @@ def coPrime(a,b):
 
 a = int(input("Enter the first number: "))
 b = int(input("Enter the second number: "))
+
 if coPrime(a,b):
     print(f"{a} and {b} are co-prime numbers")
 else:
